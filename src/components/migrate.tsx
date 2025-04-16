@@ -15,7 +15,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import Loading from "./loading";
 
 const newPoolButtonText = "Stake in new pool";
-const newPoolUrl = "https://kton-staking-v2.darwinia.network"
+const newPoolUrl = "https://staking.ktondao.xyz"
 
 const Migrate = ({ onTransactionActiveChange }: ActionProps) => {
   const { address, isConnected } = useAccount();
