@@ -17,7 +17,6 @@ jobs:
 
       - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
-        id: smart-vercel
         with:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
