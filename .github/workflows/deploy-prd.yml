@@ -10,18 +10,12 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
         with:
-          repository: darwinia-network/devops
-          path: .github
+          version: '20'
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-
-      - uses: ./.github/actions/smart-vercel
+      - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
         id: smart-vercel
         with:
