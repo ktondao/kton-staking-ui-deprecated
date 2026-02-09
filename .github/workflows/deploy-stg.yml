@@ -29,6 +29,6 @@ jobs:
           project_name: kton-stake
           alias_domain: "kton-stake-stg"
           enable_cache: true
-          enable_notify_slack: true
+          enable_notify_slack: false
           slack_channel: public-ringdao-apps
           slack_webhook: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
