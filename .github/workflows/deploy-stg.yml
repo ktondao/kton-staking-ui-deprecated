@@ -9,20 +9,16 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
         with:
-          repository: darwinia-network/devops
-          path: .github
-
-      - uses: pnpm/action-setup@v3
+          version: '20'
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: '10'
 
-      - uses: ./.github/actions/smart-vercel
+      - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
-        id: smart-vercel
         with:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
@@ -33,6 +29,6 @@ jobs:
           project_name: kton-stake
           alias_domain: "kton-stake-stg"
           enable_cache: true
-          enable_notify_slack: true
+          enable_notify_slack: false
           slack_channel: public-ringdao-apps
           slack_webhook: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
